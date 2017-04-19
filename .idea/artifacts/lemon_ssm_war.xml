@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="lemon-ssm:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="emon-ssm.war">
+      <element id="artifact" artifact-name="lemon-ssm:war exploded" />
+    </root>
+  </artifact>
+</component>
