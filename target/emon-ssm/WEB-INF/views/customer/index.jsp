@@ -59,7 +59,7 @@
                             </select>
                         </td>
                         <td><a href="/customer/update?id=${customer.id}" type="button" class="btn btn-sm btn-warning">修改</a></td>
-                        <td><a href="/customer/delete?id=${customer.id}" type="button" class="btn btn-sm btn-warning">删除</a></td>
+                        <td><a href="/customer/delete?id=${customer.id}" type="button" class="btn btn-sm btn-danger">删除</a></td>
                     </tr>
                 </c:forEach>
             </c:if>
