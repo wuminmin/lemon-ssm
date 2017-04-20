@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7503d1dc-84c0-4970-8bae-02a3496f4896" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/config.propertites" afterPath="$PROJECT_DIR$/src/main/resources/config.propertites" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/config.propertites" afterPath="$PROJECT_DIR$/target/classes/config.propertites" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/emon-ssm/WEB-INF/classes/config.propertites" afterPath="$PROJECT_DIR$/target/emon-ssm/WEB-INF/classes/config.propertites" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/emon-ssm/WEB-INF/views/customer/index.jsp" afterPath="$PROJECT_DIR$/target/emon-ssm/WEB-INF/views/customer/index.jsp" />
-    </list>
+    <list default="true" id="7503d1dc-84c0-4970-8bae-02a3496f4896" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -926,12 +919,12 @@
       <option name="presentableId" value="Default" />
       <updated>1492655865218</updated>
       <workItem from="1492655866742" duration="346000" />
-      <workItem from="1492658709248" duration="307000" />
+      <workItem from="1492658709248" duration="377000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="653000" />
+    <option name="totallyTimeSpent" value="723000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="773" extended-state="6" />
