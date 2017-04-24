@@ -38,9 +38,10 @@
         <thead>
             <tr>
                 <th>客户名字</th>
-                <th>手机账号</th>
-                <th>银行卡</th>
-                <th>有效性</th>
+                <th>电信号码</th>
+                <th>其他号码</th>
+                <th>发展人号</th>
+                <th>身份证号</th>
                 <th>操作</th>
             </tr>
         </thead>
@@ -50,7 +51,11 @@
                     <tr>
                         <td>${customer.customerName}</td>
                         <td>${customer.mobile}</td>
+                        <td>${customer.password}</td>
                         <td>${customer.bankCard}</td>
+                        <td>${customer.idcardNum}</td>
+
+                        <!--
                         <td>
                             <select class="effective" record-id="${customer.id}">
                                 <option value="0" ${customer.effective == 0 ? "selected=selected" : ""}>未验证</option>
@@ -58,6 +63,7 @@
                                 <option value="2" ${customer.effective == 2 ? "selected=selected" : ""}>验证有效</option>
                             </select>
                         </td>
+                        -->
                         <td><a href="/customer/update?id=${customer.id}" type="button" class="btn btn-sm btn-warning">修改</a></td>
                         <td><a href="/customer/delete?id=${customer.id}" type="button" class="btn btn-sm btn-danger">删除</a></td>
                     </tr>
@@ -89,7 +95,6 @@
                 location.href = next_href + param;
             })
 
-
             $(".effective").change(function(){
                 var id = $(this).attr("record-id");
                 var effective = $(this).val();
@@ -118,5 +123,10 @@
             });
         });
     </script>
+
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+
 </body>
 </html>

@@ -9,6 +9,8 @@ import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import java.util.List;
 
+import static java.lang.System.out;
+
 /**
  * Created by Administrator on 2016/6/13.
  */
@@ -21,5 +23,12 @@ public class LemonUserServiceImpl implements LemonUserService {
     public List<LemonUser> login(LemonUserExample lemonUserExample) throws Exception {
         List<LemonUser> user = lemonUserMapper.selectByExample(lemonUserExample);
         return user;
+    }
+
+    @Override
+    public void add(LemonUser user){
+        out.print(user.getUsername());
+
+        lemonUserMapper.insert(user);
     }
 }

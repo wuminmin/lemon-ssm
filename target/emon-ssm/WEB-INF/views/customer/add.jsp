@@ -5,11 +5,14 @@
   Time: 11:03
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html" pageEncoding="utf-8" language="java" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <title>客户添加</title>
@@ -24,26 +27,31 @@
 
             <form:form action="/customer/add" method="post">
                 <div class="form-group">
-                    <label for="customerName">用户名:</label>
+                    <label for="customerName">用户名称:</label>
                     <input type="text" class="form-group" id="customerName" name="customerName" value="${customer.customerName}">
                 </div>
 
                 <div class="form-group">
-                    <label for="mobile">手机号:</label>
+                    <label for="mobile">电信号码:</label>
                     <input type="text" class="form-group" id="mobile" name="mobile" value="${customer.mobile}">
                 </div>
 
                 <div class="form-group">
-                    <label for="password">密   码:</label>
+                    <label for="password">其他号码:</label>
                     <input type="text" id="password" name="password" value="${customer.password}">
                 </div>
 
                 <div class="form-group">
-                    <label for="bankCard">银行卡:</label>
+                    <label for="bankCard">发展人号:</label>
                     <input type="text" id="bankCard" name="bankCard">
-
                 </div>
 
+                <div class="form-group">
+                    <label for="idcardNum">身份证号:</label>
+                    <input type="text" id="idcardNum" name="idcardNum">
+                </div>
+
+                <!--
                 <div class="form-group">
                     <label for="effective">有效性:</label>
                     <select id="effective" name="effective">
@@ -52,10 +60,15 @@
                         <option value="2" ${customer.effective == 2 ? "selected=selected" : ""}>验证有效</option>
                     </select>
                 </div>
+                -->
 
                 <button type="submit" class="btn btn-default">提交</button>
             </form:form>
         </div>
     </div>
+
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
 </body>
 </html>

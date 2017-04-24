@@ -17,6 +17,8 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 
+import static java.lang.System.out;
+
 /**
  * Created by Administrator on 2016/6/13.
  */
@@ -84,4 +86,29 @@ public class LemonUserController {
             return "redirect:/index.jsp";
         }
     }
+
+    @RequestMapping(value = "add",method = RequestMethod.GET)
+    public ModelAndView userAdd(ModelAndView modelAndView){
+        return modelAndView;
+    }
+
+    @RequestMapping(value = "add", method = RequestMethod.POST)
+    public ModelAndView add(ModelAndView modelAndView, LemonUser request)
+    {
+        LemonUser record = request;
+
+
+        modelAndView.addObject("user", record);
+
+        if (record.getUsername() == null && record.getPassword() == null)
+        {
+
+            return modelAndView;
+        }
+
+        lemonUserService.add(record);
+
+        return new ModelAndView("redirect:/index.jsp");
+    }
+
 }

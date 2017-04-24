@@ -29,10 +29,16 @@ public class LemonCustomerController {
     public ModelAndView index(ModelAndView modelAndView, HttpServletRequest request) throws Exception {
         HashMap<String, Object> hashMap = new HashMap<String, Object>();
 
-        String mobile = request.getParameter("mobile");
-        String customerName = request.getParameter("customerName");
         String _page = request.getParameter("page");
+        String customerName = request.getParameter("customerName");
+        String mobile = request.getParameter("mobile");
+        String password = request.getParameter("password");
         String bankCard = request.getParameter("bankCard");
+        String idcardNum = request.getParameter("idcardNum");
+
+        out.println("电信号码request.getParameter---"+request.getParameter("mobile"));
+        out.println("其他号码request.getParameter---"+request.getParameter("password"));
+
         int page = 1;
         int pageSize = 10;
 
@@ -43,9 +49,11 @@ public class LemonCustomerController {
 
         page = Integer.parseInt(_page);
 
-        hashMap.put("mobile", mobile);
         hashMap.put("customerName", customerName);
+        hashMap.put("mobile", mobile);
+        hashMap.put("password",password);
         hashMap.put("bankCard",bankCard);
+        hashMap.put("idcardNum",idcardNum);
 
         int count = lemonCustomerService.count(hashMap);
 
@@ -64,9 +72,12 @@ public class LemonCustomerController {
         hashMap.put("offset", (page - 1) * pageSize);
         hashMap.put("pageSize", pageSize);
 
-        modelAndView.addObject("mobile", mobile);
+
         modelAndView.addObject("customerName", customerName);
+        modelAndView.addObject("mobile", mobile);
+        modelAndView.addObject("password",password);
         modelAndView.addObject("bankCard",bankCard);
+        modelAndView.addObject("idcardNum",idcardNum);
         modelAndView.addObject("page", page);
         modelAndView.addObject("pages", pages);
         modelAndView.addObject("pageSize", pageSize);
@@ -86,7 +97,8 @@ public class LemonCustomerController {
     public ModelAndView add(ModelAndView modelAndView, LemonCustomer request)
     {
         LemonCustomer record = request;
-        out.println("第一次银行卡"+record.getBankCard());
+
+        out.println(record.getIdcardNum()+"身份证"+record.getBankCard()+"发展人号码");
         String msg = this.validate(record);
         modelAndView.addObject("customer", record);
 
@@ -95,11 +107,8 @@ public class LemonCustomerController {
             modelAndView.addObject("error", msg);
             return modelAndView;
         }
-
-        out.println("第二次银行卡"+record.getBankCard());
         int id = lemonCustomerService.add(record);
-
-        return new ModelAndView("redirect: /customer/index");
+        return new ModelAndView("redirect: /customer/add");
     }
 
     @RequestMapping(value = "delete",method = RequestMethod.GET)

@@ -23,23 +23,36 @@
 
     <div class="row" style="margin-top: 150px;">
         <div class="col-lg-4"></div>
+
+
+
         <div class="col-lg-5">
+
+            <h1  style="align-content: center">CRM管理系统登录</h1>
+
             <c:if test="${!empty param.error}">
                 <div class="alert alert-danger" role="alert">${param.error}</div>
             </c:if>
 
             <form:form action="/user/login" method="post">
                 <div class="form-group">
-                    <label>用户名: </label>
-                    <input  class="form-group" type="text" name="userName" value="${param.userName}">
+                    <td><label>用户名: </label></td>
+
+                    <td><input  class="form-group" type="text" name="userName" value="${param.userName}"></td>
+
                 </div>
 
                 <div class="form-group">
-                    <label>密&nbsp;&nbsp;码: </label>
-                    <input class="form-group" type="text" name="password" value="${param.password}">
+                    <td><label>密&nbsp;&nbsp;&nbsp;码: </label></td>
+
+                    <td><input class="form-group" type="text" name="password" value="${param.password}"></td>
+
                 </div>
 
-                <button type="submit" class="btn btn-default">提交</button>
+                <td><button type="submit" class="btn btn-default">提交</button></td>
+                &nbsp;&nbsp;
+                <td><button type="button" class="btn btn-default" onclick="location.href='/user/add'">注册</button></td>
+
             </form:form>
         </div>
         <div class="col-lg-3"></div>

@@ -12,4 +12,5 @@ import java.util.List;
 @Service
 public interface LemonUserService {
     List<LemonUser> login(LemonUserExample lemonUserExample) throws Exception;
+    void add(LemonUser lemonUser);
 }
