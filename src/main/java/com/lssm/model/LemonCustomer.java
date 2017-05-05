@@ -1,6 +1,23 @@
 package com.lssm.model;
 
+import javax.xml.crypto.Data;
+import java.sql.Timestamp;
+import java.util.Date;
+
 public class LemonCustomer {
+
+
+    public String getSubmitTime() {
+            return submitTime;
+    }
+
+    public void setSubmitTime(String submitTime) {
+        this.submitTime = submitTime;
+    }
+
+    private String submitTime;
+
+
 
 
     /**

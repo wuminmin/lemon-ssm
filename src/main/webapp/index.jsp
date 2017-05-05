@@ -28,7 +28,7 @@
 
         <div class="col-lg-5">
 
-            <h1  style="align-content: center">CRM管理系统登录</h1>
+            <h1  style="align-content: center">池州智慧营销</h1>
 
             <c:if test="${!empty param.error}">
                 <div class="alert alert-danger" role="alert">${param.error}</div>

@@ -200,6 +200,9 @@
       <if test="idcardNum != null" >
         idcard_num,
       </if>
+      <if test="submitTime != null" >
+        submit_time,
+      </if>
       <if test="remark != null" >
         remark,
       </if>
@@ -240,6 +243,9 @@
       </if>
       <if test="idcardNum != null" >
         #{idcardNum,jdbcType=VARCHAR},
+      </if>
+      <if test="submitTime != null" >
+        #{submitTime,jdbcType=VARCHAR},
       </if>
       <if test="remark != null" >
         #{remark,jdbcType=VARCHAR},
@@ -414,7 +420,7 @@
 
 
   <select id="selectCustomers" parameterType="java.util.HashMap" resultType="java.util.HashMap" >
-    select id, effective, sex,customer_name as customerName,password, mobile, bank_card as bankCard ,idcard_num as idcardNum from lemon_customer
+    select id, effective, sex,customer_name as customerName,password, mobile,submit_time as submitTime, bank_card as bankCard ,idcard_num as idcardNum from lemon_customer
     <where>
         <if test="mobile != null ">
             and  mobile like CONCAT('%', trim(#{mobile, jdbcType=VARCHAR}), '%')

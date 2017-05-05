@@ -11,6 +11,9 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
@@ -35,6 +38,7 @@ public class LemonCustomerController {
         String password = request.getParameter("password");
         String bankCard = request.getParameter("bankCard");
         String idcardNum = request.getParameter("idcardNum");
+        String submitTime = request.getParameter("submitTime");
 
         out.println("电信号码request.getParameter---"+request.getParameter("mobile"));
         out.println("其他号码request.getParameter---"+request.getParameter("password"));
@@ -54,6 +58,7 @@ public class LemonCustomerController {
         hashMap.put("password",password);
         hashMap.put("bankCard",bankCard);
         hashMap.put("idcardNum",idcardNum);
+        hashMap.put("submitTime",submitTime);
 
         int count = lemonCustomerService.count(hashMap);
 
@@ -78,6 +83,7 @@ public class LemonCustomerController {
         modelAndView.addObject("password",password);
         modelAndView.addObject("bankCard",bankCard);
         modelAndView.addObject("idcardNum",idcardNum);
+        modelAndView.addObject("submitTime",submitTime);
         modelAndView.addObject("page", page);
         modelAndView.addObject("pages", pages);
         modelAndView.addObject("pageSize", pageSize);
@@ -98,7 +104,13 @@ public class LemonCustomerController {
     {
         LemonCustomer record = request;
 
+        SimpleDateFormat format = new SimpleDateFormat("yyyy年MM月dd日 HH时mm分ss秒");
+        Date date = new Date(System.currentTimeMillis());
+        String time = format.format(date);
+        record.setSubmitTime(time);
+
         out.println(record.getIdcardNum()+"身份证"+record.getBankCard()+"发展人号码");
+
         String msg = this.validate(record);
         modelAndView.addObject("customer", record);
 

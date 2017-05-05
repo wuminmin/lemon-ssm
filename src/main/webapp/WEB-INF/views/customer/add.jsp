@@ -25,32 +25,39 @@
                 <div class="alert alert-danger" role="alert">${error}</div>
             </c:if>
 
+            <h2 align="center" class="h2">池州智慧营销</h2>
+            <br>
+            <h3 align="center" class="h3">登记用户信息</h3>
             <form:form action="/customer/add" method="post">
-                <div class="form-group">
+
+                <div>
+                <div class="form-group" align="center">
                     <label for="customerName">用户名称:</label>
                     <input type="text" class="form-group" id="customerName" name="customerName" value="${customer.customerName}">
                 </div>
 
-                <div class="form-group">
+                <div class="form-group" align="center">
                     <label for="mobile">电信号码:</label>
                     <input type="text" class="form-group" id="mobile" name="mobile" value="${customer.mobile}">
                 </div>
 
-                <div class="form-group">
+                <div class="form-group" align="center">
                     <label for="password">其他号码:</label>
                     <input type="text" id="password" name="password" value="${customer.password}">
                 </div>
 
-                <div class="form-group">
-                    <label for="bankCard">发展人号:</label>
-                    <input type="text" id="bankCard" name="bankCard">
-                </div>
-
-                <div class="form-group">
+                <div class="form-group" align="center">
                     <label for="idcardNum">身份证号:</label>
                     <input type="text" id="idcardNum" name="idcardNum">
                 </div>
 
+                </div>
+                <div>
+                <div class="form-group" align="center">
+                    <label for="bankCard">手机号:</label>
+                    <input type="text" id="bankCard" name="bankCard">
+                </div>
+                </div>
                 <!--
                 <div class="form-group">
                     <label for="effective">有效性:</label>
@@ -62,7 +69,7 @@
                 </div>
                 -->
 
-                <button type="submit" class="btn btn-default">提交</button>
+                <button type="submit"  align="center" class="btn btn-primary btn-sm">提交资料</button>
             </form:form>
         </div>
     </div>

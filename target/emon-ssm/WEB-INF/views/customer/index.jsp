@@ -10,7 +10,7 @@
     <script src="/js/jquery.min.js"></script>
     <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
     <script src="/js/bootstrap.min.js"></script>
-    <title>客户管理</title>
+    <title>池州智慧营销系统</title>
 </head>
 <body>
     <div class="row" style="margin-top: 30px">
@@ -18,11 +18,11 @@
         <div class="col-lg-6">
             <form:form action="/customer/index" method="post" class="form-inline">
                 <div class="form-group">
-                    <label>用户名</label>
+                    <label>客户名字</label>
                     <input class="form-group" type="text" id="customerName" name="customerName" value="${customerName}" />
                 </div>
                 <div class="form-group">
-                    <label>手机号</label>
+                    <label>电信号码</label>
                     <input class="form-group" type="text" id="mobile" name="mobile" value="${mobile}" />
                 </div>
                 <button type="submit" class="btn btn-primary btn-group-sm">查询</button>
@@ -40,8 +40,9 @@
                 <th>客户名字</th>
                 <th>电信号码</th>
                 <th>其他号码</th>
-                <th>发展人号</th>
                 <th>身份证号</th>
+                <th>发展人号</th>
+                <th>操作时间</th>
                 <th>操作</th>
             </tr>
         </thead>
@@ -52,8 +53,9 @@
                         <td>${customer.customerName}</td>
                         <td>${customer.mobile}</td>
                         <td>${customer.password}</td>
-                        <td>${customer.bankCard}</td>
                         <td>${customer.idcardNum}</td>
+                        <td>${customer.bankCard}</td>
+                        <td>${customer.submitTime}</td>
 
                         <!--
                         <td>
