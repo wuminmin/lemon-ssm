@@ -13,6 +13,8 @@ import java.util.List;
 public interface LemonCustomerService {
     List<LemonCustomer> findCustomers(HashMap<String, Object> hashMap) throws Exception;
 
+    List<LemonCustomer> findCustomersForExcel();
+
     int add(LemonCustomer record);
 
     void delete(LemonCustomer record);

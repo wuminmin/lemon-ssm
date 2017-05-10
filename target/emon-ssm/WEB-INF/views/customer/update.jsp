@@ -22,28 +22,37 @@
             <div class="alert alert-danger" role="alert">${error}</div>
         </c:if>
 
+        <h2 align="center" class="h2">池州智慧营销</h2>
+        <br>
+        <h3 align="center" class="h3">修改用户信息</h3>
         <form:form action="/customer/update" method="post">
-            <div class="form-group">
-                <label for="customerName">用户名:</label>
+            <div class="form-group" align="center">
+                <label for="customerName">用户名称:</label>
                 <input type="text" class="form-group" id="customerName" name="customerName" value="${customer.customerName}">
             </div>
 
-            <div class="form-group">
-                <label for="mobile">手机号:</label>
+            <div class="form-group" align="center">
+                <label for="mobile">电信号码:</label>
                 <input type="text" class="form-group" id="mobile" name="mobile" value="${customer.mobile}">
             </div>
 
-            <div class="form-group">
-                <label for="password">密  码:</label>
+            <div class="form-group" align="center">
+                <label for="password">其他号码:</label>
                 <input type="text" id="password" name="password" value="${customer.password}">
             </div>
 
-            <div class="form-group">
-                <label for="bankCard">银行卡:</label>
+            <div class="form-group" align="center">
+                <label for="idcardNum">身份证号码:</label>
+                <input type="text" id="idcardNum" name="idcardNum">
+            </div>
+
+            <div class="form-group" align="center">
+                <label for="bankCard">登记人号码:</label>
                 <input type="text" id="bankCard" name="bankCard">
 
             </div>
 
+            <!--
             <div class="form-group">
                 <label for="effective">有效性:</label>
                 <select id="effective" name="effective">
@@ -52,9 +61,12 @@
                     <option value="2" ${customer.effective == 2 ? "selected=selected" : ""}>验证有效</option>
                 </select>
             </div>
+            -->
 
+            <div class="form-group" align="center">
             <input type="hidden" name="id" value="${customer.id}">
-            <button type="submit" class="btn btn-default">提交</button>
+            <button type="submit" align="center" class="btn btn-primary btn-sm">修改</button>
+            </div>
         </form:form>
     </div>
 </div>

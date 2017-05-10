@@ -27,11 +27,12 @@
                 </div>
                 <button type="submit" class="btn btn-primary btn-group-sm">查询</button>
             </form:form>
+
+            <a href="/customer/add" class="btn btn-primary btn-group-sm">添加</a>
+
+            <a href="/customer/excel" class="btn btn-primary btn-group-sm">导出</a>
         </div>
 
-        <div class="col-lg-x2">
-            <a href="/customer/add" class="btn btn-primary btn-sm">添加</a>
-        </div>
     </div>
 
     <table class="table table-hover">
@@ -41,7 +42,7 @@
                 <th>电信号码</th>
                 <th>其他号码</th>
                 <th>身份证号</th>
-                <th>发展人号</th>
+                <th>登记人号码</th>
                 <th>操作时间</th>
                 <th>操作</th>
             </tr>

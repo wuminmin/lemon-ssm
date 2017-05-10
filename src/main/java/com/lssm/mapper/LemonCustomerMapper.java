@@ -98,5 +98,7 @@ public interface LemonCustomerMapper {
 
     List<LemonCustomer> selectCustomers(HashMap<?, ?> hashMap);
 
+    List<LemonCustomer> selectCustomersForExcel();
+
     int count(HashMap<?, ?> hashMap);
 }

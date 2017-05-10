@@ -26,6 +26,12 @@ public class LemonCustomerServiceImpl implements LemonCustomerService {
     }
 
     @Override
+    public List<LemonCustomer> findCustomersForExcel(){
+        List<LemonCustomer> customerServices = lemonCustomerMapper.selectCustomersForExcel();
+        return customerServices;
+    }
+
+    @Override
     public int add(LemonCustomer record) {
 
         int id = lemonCustomerMapper.insertSelective(record);

@@ -54,7 +54,7 @@
                 </div>
                 <div>
                 <div class="form-group" align="center">
-                    <label for="bankCard">手机号:</label>
+                    <label for="bankCard">登记人号码:</label>
                     <input type="text" id="bankCard" name="bankCard">
                 </div>
                 </div>
@@ -69,7 +69,9 @@
                 </div>
                 -->
 
+                <div class="form-group" align="center">
                 <button type="submit"  align="center" class="btn btn-primary btn-sm">提交资料</button>
+                </div>
             </form:form>
         </div>
     </div>

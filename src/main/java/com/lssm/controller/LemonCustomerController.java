@@ -2,6 +2,7 @@ package com.lssm.controller;
 
 import com.lssm.model.LemonCustomer;
 import com.lssm.service.LemonCustomerService;
+import com.lssm.view.ExcelView;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,9 +14,7 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 
 import static java.lang.System.out;
 
@@ -39,9 +38,6 @@ public class LemonCustomerController {
         String bankCard = request.getParameter("bankCard");
         String idcardNum = request.getParameter("idcardNum");
         String submitTime = request.getParameter("submitTime");
-
-        out.println("电信号码request.getParameter---"+request.getParameter("mobile"));
-        out.println("其他号码request.getParameter---"+request.getParameter("password"));
 
         int page = 1;
         int pageSize = 10;
@@ -99,6 +95,8 @@ public class LemonCustomerController {
         return  modelAndView;
     }
 
+
+
     @RequestMapping(value = "add", method = RequestMethod.POST)
     public ModelAndView add(ModelAndView modelAndView, LemonCustomer request)
     {
@@ -121,6 +119,36 @@ public class LemonCustomerController {
         }
         int id = lemonCustomerService.add(record);
         return new ModelAndView("redirect: /customer/add");
+    }
+
+    @RequestMapping(value = "excel",method = RequestMethod.GET)
+    public ModelAndView excel(ModelAndView modelAndView ,HttpServletRequest request)throws Exception{
+//        List<LemonCustomer> list = new ArrayList<LemonCustomer>();
+//        LemonCustomer lemonCustomer = new LemonCustomer();
+//        lemonCustomer.setCustomerName("wmm");
+//        lemonCustomer.setMobile("123456");
+//        list.add(lemonCustomer);
+
+//        HashMap<String, Object> hashMap = new HashMap<String, Object>();
+//
+//        String customerName = request.getParameter("customerName");
+//        String mobile = request.getParameter("mobile");
+//        String password = request.getParameter("password");
+//        String bankCard = request.getParameter("bankCard");
+//        String idcardNum = request.getParameter("idcardNum");
+//        String submitTime = request.getParameter("submitTime");
+//        hashMap.put("customerName", customerName);
+//        hashMap.put("mobile", mobile);
+//        hashMap.put("password",password);
+//        hashMap.put("bankCard",bankCard);
+//        hashMap.put("idcardNum",idcardNum);
+//        hashMap.put("submitTime",submitTime);
+
+        List<LemonCustomer> customers = lemonCustomerService.findCustomersForExcel();
+        Map<String,List<LemonCustomer>> map = new HashMap<String,List<LemonCustomer>>();
+        map.put("infoList",customers);
+        ExcelView ve = new ExcelView();
+        return new ModelAndView(ve,map);
     }
 
     @RequestMapping(value = "delete",method = RequestMethod.GET)

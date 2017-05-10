@@ -433,6 +433,12 @@
     ORDER by id desc limit #{offset}, #{pageSize}
   </select>
 
+  <select id="selectCustomersForExcel" resultType="com.lssm.model.LemonCustomer" >
+    select id,customer_name as customerName,password, mobile,submit_time as submitTime, bank_card as bankCard ,idcard_num as idcardNum from lemon_customer
+
+  </select>
+
+
     <select id="count" parameterType="java.util.HashMap" resultType="java.lang.Integer" >
         select count(*) from lemon_customer
         <where>
