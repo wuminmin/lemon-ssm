@@ -118,7 +118,9 @@ public class LemonCustomerController {
             return modelAndView;
         }
         int id = lemonCustomerService.add(record);
-        return new ModelAndView("redirect: /customer/add");
+        String submitMsg = this.validateSubmit(record);
+        modelAndView.addObject("submit",submitMsg);
+        return modelAndView;
     }
 
     @RequestMapping(value = "excel",method = RequestMethod.GET)
@@ -212,29 +214,51 @@ public class LemonCustomerController {
         String customerName = customer.getCustomerName();
         String mobile = customer.getMobile();
         String password = customer.getPassword();
+        String idcardNum = customer.getIdcardNum();
+        String bankCard = customer.getBankCard();
         String msg = "";
         if (customerName == null || "".equals(customerName))
         {
-            msg = "Customer ";
+            msg = "客户名称 ";
         }
 
         if (mobile == null || "".equals(mobile))
         {
-            msg += "Mobile ";
+            msg += "电信号码 ";
         }
 
         if (password == null || "".equals(password))
         {
-            msg += "Password ";
+            msg += "其他号码 ";
+        }
+
+        if (idcardNum == null || "".equals(idcardNum))
+        {
+            msg += "身份证号 ";
+        }
+
+        if (bankCard == null || "".equals(bankCard))
+        {
+            msg += "登记人号码 ";
         }
 
         if (msg != "")
         {
-            return msg + "can't be null!";
+            return msg + "不能为空!";
         } else
         {
             return msg;
         }
+    }
+
+    private String validateSubmit(LemonCustomer customer){
+        String customerName = customer.getCustomerName();
+        String mobile = customer.getMobile();
+        String password = customer.getPassword();
+        String idcardNum = customer.getIdcardNum();
+        String bankCard = customer.getBankCard();
+        String msg = customerName+","+mobile+","+password+","+idcardNum+","+bankCard+","+"登记成功！";
+        return msg;
     }
 
     @RequestMapping("changeStatus")
