@@ -28,7 +28,7 @@
                 <button type="submit" class="btn btn-primary btn-group-sm">查询</button>
             </form:form>
 
-            <a href="/customer/add" class="btn btn-primary btn-group-sm">添加</a>
+            <a href="/customer/add2" class="btn btn-primary btn-group-sm">添加</a>
 
             <a href="/customer/excel" class="btn btn-primary btn-group-sm">导出</a>
         </div>
